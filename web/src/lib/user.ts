@@ -1,12 +1,8 @@
 import { User } from "./types";
 
-export const checkUserIsNoAuthUser = (userId: string) => {
-  return userId === "__no_auth_user__";
-};
-
 // should be used client-side only
 export const getCurrentUser = async (): Promise<User | null> => {
-  const response = await fetch("/api/me", {
+  const response = await fetch("/api/manage/me", {
     credentials: "include",
   });
   if (!response.ok) {

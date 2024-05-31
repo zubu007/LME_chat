@@ -5,13 +5,11 @@ export function Bubble({
   onClick,
   children,
   showCheckbox = false,
-  notSelectable = false,
 }: {
   isSelected: boolean;
   onClick?: () => void;
   children: string | JSX.Element;
   showCheckbox?: boolean;
-  notSelectable?: boolean;
 }) {
   return (
     <div
@@ -23,12 +21,9 @@ export function Bubble({
       border
       border-border 
       w-fit 
-      flex` +
-        (notSelectable
-          ? " bg-background cursor-default"
-          : isSelected
-            ? " bg-hover cursor-pointer"
-            : " bg-background hover:bg-hover-light cursor-pointer")
+      flex 
+      cursor-pointer ` +
+        (isSelected ? " bg-hover" : " bg-background hover:bg-hover-light")
       }
       onClick={onClick}
     >

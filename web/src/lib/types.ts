@@ -1,9 +1,5 @@
 import { Persona } from "@/app/admin/assistants/interfaces";
 
-export interface UserPreferences {
-  chosen_assistants: number[] | null;
-}
-
 export interface User {
   id: string;
   email: string;
@@ -11,7 +7,6 @@ export interface User {
   is_superuser: string;
   is_verified: string;
   role: "basic" | "admin";
-  preferences: UserPreferences;
 }
 
 export interface MinimalUserSnapshot {

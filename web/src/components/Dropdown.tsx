@@ -101,24 +101,22 @@ export function SearchMultiSelectDropdown({
           px-4 
           py-2 
           text-sm 
-          bg-background
-          border
-          border-border
+          bg-gray-700 
           rounded-md 
           shadow-sm 
-          `}
+          focus:ring focus:ring-offset-0 focus:ring-1 focus:ring-offset-gray-800 focus:ring-blue-800`}
           onClick={(e) => e.stopPropagation()}
         />
         <button
           type="button"
           className={`absolute top-0 right-0 
             text-sm 
-            h-full px-2 border-l border-border`}
+            h-full px-2 border-l border-gray-800`}
           aria-expanded="true"
           aria-haspopup="true"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <ChevronDownIcon className="my-auto" />
+          <ChevronDownIcon className="text-gray-400 my-auto" />
         </button>
       </div>
 
@@ -131,9 +129,9 @@ export function SearchMultiSelectDropdown({
             w-full
             rounded-md
             shadow-lg
-            bg-background
-            border
-            border-border
+            bg-gray-700
+            border-2
+            border-gray-600
             max-h-80
             overflow-y-auto
             overscroll-contain`}
@@ -167,7 +165,7 @@ export function SearchMultiSelectDropdown({
             ) : (
               <button
                 key={0}
-                className={`w-full text-left block px-4 py-2.5 text-sm hover:bg-hover`}
+                className={`w-full text-left block px-4 py-2.5 text-sm hover:bg-gray-800`}
                 role="menuitem"
                 onClick={() => setIsOpen(false)}
               >

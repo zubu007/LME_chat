@@ -53,7 +53,7 @@ class PersonaSnapshot(BaseModel):
     prompts: list[PromptSnapshot]
     tools: list[ToolSnapshot]
     document_sets: list[DocumentSet]
-    users: list[MinimalUserSnapshot]
+    users: list[UUID]
     groups: list[int]
 
     @classmethod
@@ -92,10 +92,7 @@ class PersonaSnapshot(BaseModel):
                 DocumentSet.from_model(document_set_model)
                 for document_set_model in persona.document_sets
             ],
-            users=[
-                MinimalUserSnapshot(id=user.id, email=user.email)
-                for user in persona.users
-            ],
+            users=[user.id for user in persona.users],
             groups=[user_group.id for user_group in persona.groups],
         )
 
